@@ -530,12 +530,93 @@ td.vazio.carregando {
   }
 }
 
-@media (max-width: 400px) {
-  .titulo {
-    font-size: 1.15rem;
+/* Celular */
+@media (max-width: 480px) {
+  .pagina {
+    padding: 12px 12px 32px;
   }
+
+  .cartaz img {
+    border-radius: 18px;
+  }
+
+  .fita {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .fita li {
+    font-size: 0.85rem;
+    padding: 4px 11px;
+  }
+
   .bloco {
-    padding: 20px 14px 20px;
+    padding: 22px 16px 22px;
+    border-radius: 18px;
+  }
+
+  .titulo {
+    font-size: 1.2rem;
+    padding: 7px 18px;
+  }
+
+  .apoio {
+    font-size: 0.93rem;
+  }
+
+  .form {
+    gap: 18px;
+  }
+
+  /* Alvos de toque maiores */
+  .chip span {
+    min-width: 52px;
+    min-height: 44px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check {
+    font-size: 0.95rem;
+    padding: 4px 0;
+  }
+
+  .check input {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Botão de confirmar ocupa a largura toda, mais fácil de tocar */
+  .form .botao {
+    align-self: stretch;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+  }
+
+  .criancas {
+    max-width: 300px;
+  }
+
+  table {
+    min-width: 280px;
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 9px 8px;
+  }
+
+  .botao.vazado {
+    width: 100%;
+  }
+
+  .rodape {
+    font-size: 0.98rem;
+    margin-top: 22px;
   }
 }
 
