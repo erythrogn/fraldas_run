@@ -8,6 +8,8 @@
   const tbody = document.getElementById("lista-confirmados");
   const contador = document.getElementById("contador");
   const btnAtualizar = document.getElementById("btn-atualizar");
+  const btnLista = document.getElementById("btn-lista");
+  const listaCorpo = document.getElementById("lista-corpo");
 
   function mostrarMensagem(texto, tipo) {
     mensagem.textContent = texto;
@@ -42,11 +44,11 @@
   async function carregarConfirmados() {
     if (!apiConfigurada()) {
       tbody.innerHTML =
-        '<tr><td colspan="5" class="vazio">Configure a URL do Apps Script em config.js</td></tr>';
+        '<tr><td colspan="3" class="vazio">Configure a URL do Apps Script em config.js</td></tr>';
       return;
     }
 
-    tbody.innerHTML = '<tr><td colspan="5" class="vazio">Carregando...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="3" class="vazio">Carregando...</td></tr>';
 
     try {
       const resposta = await fetch(URL_API);
@@ -57,7 +59,7 @@
 
       if (lista.length === 0) {
         tbody.innerHTML =
-          '<tr><td colspan="5" class="vazio">Ninguém confirmou ainda. Seja o primeiro! 💜</td></tr>';
+          '<tr><td colspan="3" class="vazio">Ninguém confirmou ainda. Seja o primeiro!</td></tr>';
         return;
       }
 
@@ -68,16 +70,25 @@
               <td>${i + 1}</td>
               <td>${escaparHtml(atleta.nome)}</td>
               <td>${escaparHtml(atleta.modalidade)}</td>
-              <td>${escaparHtml(atleta.tamanhoFralda)}</td>
-              <td>${atleta.mimo ? "Sim" : "Não"}</td>
             </tr>`
         )
         .join("");
     } catch (erro) {
       tbody.innerHTML =
-        '<tr><td colspan="5" class="vazio">Não foi possível carregar a lista agora.</td></tr>';
+        '<tr><td colspan="3" class="vazio">Não foi possível carregar a lista agora.</td></tr>';
     }
   }
+
+  function alternarLista() {
+    const aberta = !listaCorpo.hidden;
+    listaCorpo.hidden = aberta;
+    btnLista.setAttribute("aria-expanded", String(!aberta));
+    btnLista.textContent = aberta ? "Ver lista de atletas" : "Ocultar lista";
+
+    if (!aberta) carregarConfirmados();
+  }
+
+  btnLista.addEventListener("click", alternarLista);
 
   form.addEventListener("submit", async function (evento) {
     evento.preventDefault();
@@ -131,5 +142,6 @@
 
   btnAtualizar.addEventListener("click", carregarConfirmados);
 
+  // Carrega só a contagem na abertura; a lista completa aparece ao clicar.
   carregarConfirmados();
 })();

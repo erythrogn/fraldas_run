@@ -83,24 +83,28 @@
         Atletas confirmados <span id="contador" class="contador"></span>
       </h2>
 
-      <div class="tabela-caixa">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Modalidade</th>
-              <th>Fralda</th>
-              <th>Mimo</th>
-            </tr>
-          </thead>
-          <tbody id="lista-confirmados">
-            <tr><td colspan="5" class="vazio">Carregando...</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <button type="button" id="btn-lista" class="botao vazado" aria-expanded="false" aria-controls="lista-corpo">
+        Ver lista de atletas
+      </button>
 
-      <button type="button" id="btn-atualizar" class="botao vazado">Atualizar lista</button>
+      <div id="lista-corpo" class="lista-corpo" hidden>
+        <div class="tabela-caixa">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Km</th>
+              </tr>
+            </thead>
+            <tbody id="lista-confirmados">
+              <tr><td colspan="3" class="vazio">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button type="button" id="btn-atualizar" class="botao vazado">Atualizar lista</button>
+      </div>
     </section>
 
     <footer class="rodape">
