@@ -47,9 +47,12 @@
       <li class="reveal" style="--d: 240ms">3 km e 5 km</li>
     </ul>
 
+    <figure class="criancas">
+      <img src="assets/criancas.png" alt="Ilustração de um menino e uma menina correndo, com camisetas de número 001" width="900" height="636" />
+    </figure>
+
     <!-- Confirmação de presença -->
     <section class="bloco reveal" id="inscricao" aria-labelledby="titulo-form">
-      <p class="kicker">Inscrição e presença</p>
       <h2 class="titulo" id="titulo-form">Confirme sua presença</h2>
       <p class="apoio">
         A inscrição é confirmada com a entrega de 1 pacote de fralda descartável.
@@ -110,17 +113,13 @@
 
     <!-- Lista de confirmados (carrega em segundo plano) -->
     <section class="bloco reveal" aria-labelledby="titulo-lista">
-      <div class="cabecalho-linha">
-        <div>
-          <p class="kicker">Quem já vai</p>
-          <h2 class="titulo" id="titulo-lista">Atletas confirmados</h2>
-        </div>
-        <span id="contador" class="contador" aria-live="polite">0</span>
-      </div>
+      <h2 class="titulo" id="titulo-lista">
+        Atletas confirmados <span id="contador" class="contador" aria-live="polite">0</span>
+      </h2>
 
       <p id="atualizacao" class="atualizacao">Carregando lista...</p>
 
-      <button type="button" id="btn-lista" class="link-acao" aria-expanded="false" aria-controls="lista-corpo">
+      <button type="button" id="btn-lista" class="botao vazado" aria-expanded="false" aria-controls="lista-corpo">
         Ver lista
       </button>
 
@@ -139,7 +138,7 @@
             </tbody>
           </table>
         </div>
-        <button type="button" id="btn-atualizar" class="botao botao-pequeno">Atualizar agora</button>
+        <button type="button" id="btn-atualizar" class="botao vazado">Atualizar agora</button>
       </div>
     </section>
 
