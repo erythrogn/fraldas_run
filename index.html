@@ -4,48 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fraldas Run Ayana Cecília 2026</title>
-  <meta name="description" content="Fraldas Run Ayana Cecília 2026 — uma corrida especial para nossos atletas. 13/12/2026, Bravus CrossBox." />
+  <meta name="description" content="Confirme sua presença na Fraldas Run Ayana Cecília 2026. 13/12/2026, às 06h00, no Bravus CrossBox." />
+  <meta name="theme-color" content="#6a2d9c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <div class="xadrez xadrez-topo" aria-hidden="true"></div>
+
   <main class="pagina">
 
-    <!-- Cartaz oficial: a arte completa, sem recortes -->
-    <section class="cartaz" aria-label="Cartaz da Fraldas Run 2026">
-      <img src="assets/flyer.png" alt="Cartaz da Fraldas Run Ayana Cecília 2026: corrida em 13/12/2026 às 06h00 no Bravus CrossBox, com 3 km e 5 km" />
+    <section class="cartaz" aria-label="Cartaz oficial da corrida">
+      <img src="assets/flyer.png" alt="Cartaz da Fraldas Run Ayana Cecília 2026" width="1119" height="1406" />
     </section>
 
+    <ul class="fita" aria-label="Resumo do evento">
+      <li class="reveal" style="--d: 0ms">13/12/2026</li>
+      <li class="reveal" style="--d: 80ms">06h00</li>
+      <li class="reveal" style="--d: 160ms">Bravus CrossBox</li>
+      <li class="reveal" style="--d: 240ms">3 km e 5 km</li>
+    </ul>
+
     <!-- Confirmação de presença -->
-    <section class="bloco" id="inscricao" aria-labelledby="titulo-form">
-      <h2 class="faixa" id="titulo-form">Confirme sua presença</h2>
+    <section class="bloco reveal" id="inscricao" aria-labelledby="titulo-form">
+      <p class="kicker">Inscrição e presença</p>
+      <h2 class="titulo" id="titulo-form">Confirme <span class="marca">sua presença</span></h2>
       <p class="apoio">
-        A inscrição é confirmada mediante a entrega de 1 pacote de fralda descartável.
+        A inscrição é confirmada com a entrega de 1 pacote de fralda descartável.
         O mimo é opcional.
       </p>
 
       <form id="form-presenca" class="form" novalidate>
         <label class="campo">
-          <span>Nome completo *</span>
-          <input type="text" name="nome" required autocomplete="name" />
+          <span>Nome completo</span>
+          <input class="texto" type="text" name="nome" required autocomplete="name" />
         </label>
 
         <label class="campo">
-          <span>Telefone / WhatsApp *</span>
-          <input type="tel" name="telefone" required placeholder="(91) 99999-9999" autocomplete="tel" />
+          <span>Telefone / WhatsApp</span>
+          <input class="texto" type="tel" name="telefone" required placeholder="(91) 99999-9999" autocomplete="tel" inputmode="tel" />
         </label>
 
         <fieldset class="campo">
-          <legend>Modalidade *</legend>
-          <div class="opcoes">
-            <label class="opcao">
+          <legend>Modalidade</legend>
+          <div class="chips">
+            <label class="chip">
               <input type="radio" name="modalidade" value="3 km" required />
               <span>3 km</span>
             </label>
-            <label class="opcao">
+            <label class="chip">
               <input type="radio" name="modalidade" value="5 km" />
               <span>5 km</span>
             </label>
@@ -53,18 +63,18 @@
         </fieldset>
 
         <fieldset class="campo">
-          <legend>Tamanho da fralda que você irá levar *</legend>
-          <div class="opcoes">
-            <label class="opcao"><input type="radio" name="tamanhoFralda" value="P" required /><span>P</span></label>
-            <label class="opcao"><input type="radio" name="tamanhoFralda" value="M" /><span>M</span></label>
-            <label class="opcao"><input type="radio" name="tamanhoFralda" value="G" /><span>G</span></label>
-            <label class="opcao"><input type="radio" name="tamanhoFralda" value="XG" /><span>XG</span></label>
+          <legend>Tamanho da fralda que você irá levar</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="tamanhoFralda" value="P" required /><span>P</span></label>
+            <label class="chip"><input type="radio" name="tamanhoFralda" value="M" /><span>M</span></label>
+            <label class="chip"><input type="radio" name="tamanhoFralda" value="G" /><span>G</span></label>
+            <label class="chip"><input type="radio" name="tamanhoFralda" value="XG" /><span>XG</span></label>
           </div>
         </fieldset>
 
         <label class="check">
           <input type="checkbox" name="entregaFralda" required />
-          <span>Confirmo que entregarei o pacote de fralda descartável *</span>
+          <span>Confirmo que vou entregar o pacote de fralda descartável</span>
         </label>
 
         <label class="check">
@@ -72,19 +82,27 @@
           <span>Vou levar um mimo (opcional)</span>
         </label>
 
-        <button type="submit" id="btn-enviar" class="botao">Confirmar presença</button>
+        <button type="submit" id="btn-enviar" class="botao">
+          <span class="rotulo">Confirmar presença</span>
+        </button>
         <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
       </form>
     </section>
 
-    <!-- Lista de confirmados -->
-    <section class="bloco" aria-labelledby="titulo-lista">
-      <h2 class="faixa" id="titulo-lista">
-        Atletas confirmados <span id="contador" class="contador"></span>
-      </h2>
+    <!-- Lista de confirmados (carrega em segundo plano) -->
+    <section class="bloco reveal" aria-labelledby="titulo-lista">
+      <div class="cabecalho-linha">
+        <div>
+          <p class="kicker">Quem já vai</p>
+          <h2 class="titulo" id="titulo-lista">Atletas confirmados</h2>
+        </div>
+        <span id="contador" class="contador" aria-live="polite">0</span>
+      </div>
 
-      <button type="button" id="btn-lista" class="botao vazado" aria-expanded="false" aria-controls="lista-corpo">
-        Ver lista de atletas
+      <p id="atualizacao" class="atualizacao">Carregando lista...</p>
+
+      <button type="button" id="btn-lista" class="link-acao" aria-expanded="false" aria-controls="lista-corpo">
+        Ver lista
       </button>
 
       <div id="lista-corpo" class="lista-corpo" hidden>
@@ -102,16 +120,19 @@
             </tbody>
           </table>
         </div>
-
-        <button type="button" id="btn-atualizar" class="botao vazado">Atualizar lista</button>
+        <button type="button" id="btn-atualizar" class="botao botao-pequeno">Atualizar agora</button>
       </div>
     </section>
 
-    <footer class="rodape">
-      <p>Venha fazer parte dessa corrida cheia de amor, movimento e diversão!</p>
+    <footer class="rodape reveal">
+      <p>Venha fazer parte dessa corrida cheia de amor, movimento e diversão.</p>
     </footer>
 
   </main>
+
+  <div class="xadrez xadrez-base" aria-hidden="true"></div>
+
+  <div id="confete" class="confete" aria-hidden="true"></div>
 
   <script src="config.js"></script>
   <script src="script.js"></script>
