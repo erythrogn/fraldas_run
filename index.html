@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraldas Run Ayana Cecília 2026</title>
+  <meta name="description" content="Fraldas Run Ayana Cecília 2026 — uma corrida especial para nossos atletas. 13/12/2026, Bravus CrossBox." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="checker top" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="tagline">Pequenos passos, grandes conquistas!</p>
+    <h1>
+      <span class="title-main">Fraldas Run</span>
+      <span class="title-name">Ayana Cecília</span>
+      <span class="title-year">2026</span>
+    </h1>
+    <p class="subtitle">Uma corrida especial para nossos atletas!</p>
+  </header>
+
+  <section class="info" aria-label="Informações do evento">
+    <article class="card">
+      <span class="icon">📅</span>
+      <h2>Data e horário</h2>
+      <p>13/12/2026</p>
+      <p>às 06h00</p>
+    </article>
+    <article class="card">
+      <span class="icon">📍</span>
+      <h2>Local</h2>
+      <p>Bravus CrossBox</p>
+      <p class="small">Final da Boa Esperança, antes da Av. Paraíso</p>
+    </article>
+    <article class="card">
+      <span class="icon">👟</span>
+      <h2>Distâncias</h2>
+      <p>3 km e 5 km</p>
+    </article>
+  </section>
+
+  <section class="awards" aria-label="Premiação">
+    <h2>Terá troféu para 1º, 2º e 3º lugar</h2>
+    <div class="award-grid">
+      <div class="award-box">
+        <h3>Categoria 3 km</h3>
+        <p>Masculino e feminino</p>
+        <div class="trophies">🏆 🏆 🏆</div>
+      </div>
+      <div class="award-box">
+        <h3>Categoria 5 km</h3>
+        <p>Masculino e feminino</p>
+        <div class="trophies">🏆 🏆 🏆</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="perks" aria-label="Inscrição e kit">
+    <div class="perk">
+      <h3>Inscrição</h3>
+      <p>1 pacote de fralda descartável e 1 mimo</p>
+    </div>
+    <div class="perk">
+      <h3>Kit do atleta</h3>
+      <p>1 medalha e nº de peito</p>
+    </div>
+    <div class="perk">
+      <h3>Café da manhã</h3>
+      <p>Teremos um lindo café da manhã junto ☕🥐</p>
+    </div>
+  </section>
+
+  <section class="form-section" id="inscricao" aria-labelledby="form-title">
+    <h2 id="form-title">Confirmação de presença</h2>
+    <p class="form-intro">Preencha os dados abaixo para confirmar sua participação. A inscrição é confirmada mediante a entrega de um pacote de fralda descartável.</p>
+
+    <form id="form-presenca" novalidate>
+      <label>
+        Nome completo *
+        <input type="text" name="nome" required autocomplete="name" />
+      </label>
+
+      <label>
+        Telefone / WhatsApp *
+        <input type="tel" name="telefone" required placeholder="(91) 99999-9999" autocomplete="tel" />
+      </label>
+
+      <fieldset>
+        <legend>Escolha sua modalidade *</legend>
+        <label class="radio">
+          <input type="radio" name="modalidade" value="3 km" required /> 3 km
+        </label>
+        <label class="radio">
+          <input type="radio" name="modalidade" value="5 km" /> 5 km
+        </label>
+      </fieldset>
+
+      <label class="checkbox">
+        <input type="checkbox" name="entregaFralda" required />
+        Confirmo que entregarei o pacote de fralda descartável *
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" name="mimo" />
+        Vou levar um mimo (opcional)
+      </label>
+
+      <label>
+        Tamanho da fralda que você irá levar *
+        <select name="tamanhoFralda" required>
+          <option value="">Selecione</option>
+          <option value="P">P</option>
+          <option value="M">M</option>
+          <option value="G">G</option>
+          <option value="XG">XG</option>
+        </select>
+      </label>
+
+      <button type="submit" id="btn-enviar">Confirmar presença</button>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="confirmados" aria-labelledby="lista-title">
+    <h2 id="lista-title">Atletas confirmados <span id="contador"></span></h2>
+    <div class="tabela-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Modalidade</th>
+            <th>Fralda</th>
+            <th>Mimo</th>
+          </tr>
+        </thead>
+        <tbody id="lista-confirmados">
+          <tr><td colspan="5" class="vazio">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="button" id="btn-atualizar" class="secundario">Atualizar lista</button>
+  </section>
+
+  <footer>
+    <p>Venha fazer parte dessa corrida cheia de amor, movimento e diversão! 💜</p>
+  </footer>
+
+  <div class="checker bottom" aria-hidden="true"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

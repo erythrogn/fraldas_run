@@ -1,0 +1,386 @@
+:root {
+  --roxo: #5b2a86;
+  --roxo-claro: #c9a7ff;
+  --lilas: #f4edff;
+  --dourado: #f5b400;
+  --texto: #2b1d3d;
+  --branco: #ffffff;
+  --sombra: 0 8px 24px rgba(91, 42, 134, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background: linear-gradient(180deg, #d9f0ff 0%, var(--lilas) 40%, #fdf9ff 100%);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Faixas xadrez (bandeira de chegada) */
+.checker {
+  height: 18px;
+  background-image:
+    linear-gradient(45deg, var(--roxo) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--roxo) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--roxo) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--roxo) 75%);
+  background-size: 18px 18px;
+  background-position: 0 0, 0 9px, 9px -9px, -9px 0;
+  background-color: var(--branco);
+}
+
+/* Cabeçalho */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  background: radial-gradient(circle at top, #ffffff 0%, var(--roxo-claro) 100%);
+}
+
+.tagline {
+  font-weight: 700;
+  color: var(--roxo);
+  margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.title-main {
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  color: var(--roxo);
+  text-shadow: 3px 3px 0 var(--branco);
+}
+
+.title-name {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: var(--texto);
+}
+
+.title-year {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--roxo);
+}
+
+.subtitle {
+  margin: 1rem 0 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--roxo);
+  background: var(--branco);
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: var(--sombra);
+}
+
+/* Informações */
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 960px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  border-top: 5px solid var(--roxo);
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  color: var(--roxo);
+}
+
+.card p {
+  margin: 0.15rem 0;
+  font-weight: 700;
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.small {
+  font-size: 0.85rem;
+  font-weight: 400 !important;
+}
+
+/* Premiação */
+.awards {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.awards > h2 {
+  color: var(--roxo);
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.award-box {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.award-box h3 {
+  margin: 0;
+  color: var(--branco);
+  background: var(--roxo);
+  border-radius: 999px;
+  padding: 0.4rem;
+}
+
+.trophies {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* Inscrição e kit */
+.perks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.perk {
+  background: var(--branco);
+  border: 2px dashed var(--roxo-claro);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.perk h3 {
+  margin: 0 0 0.4rem;
+  color: var(--roxo);
+}
+
+.perk p {
+  margin: 0;
+}
+
+/* Formulário */
+.form-section {
+  max-width: 560px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+.form-section h2 {
+  margin-top: 0;
+  color: var(--roxo);
+  text-align: center;
+}
+
+.form-intro {
+  font-size: 0.95rem;
+  text-align: center;
+  color: #5a4a6e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+label.radio,
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--roxo-claro);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid var(--dourado);
+  outline-offset: 1px;
+}
+
+fieldset {
+  border: 2px solid var(--roxo-claro);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 0.4rem;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(90deg, var(--roxo), #8e4dd6);
+  color: var(--branco);
+  box-shadow: var(--sombra);
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+button.secundario {
+  display: block;
+  margin: 1rem auto 0;
+  background: var(--branco);
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+  box-shadow: none;
+}
+
+.mensagem {
+  text-align: center;
+  font-weight: 700;
+  min-height: 1.5rem;
+  margin: 0;
+}
+
+.mensagem.ok {
+  color: #1e7b34;
+}
+
+.mensagem.erro {
+  color: #b3261e;
+}
+
+/* Tabela de confirmados */
+.confirmados {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.confirmados h2 {
+  text-align: center;
+  color: var(--roxo);
+}
+
+#contador {
+  font-size: 0.9em;
+  background: var(--dourado);
+  color: var(--texto);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  background: var(--branco);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+th,
+td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #eee3f7;
+}
+
+thead th {
+  background: var(--roxo);
+  color: var(--branco);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--lilas);
+}
+
+td.vazio {
+  text-align: center;
+  color: #7a6a8e;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1rem;
+  }
+}
